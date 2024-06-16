@@ -1,0 +1,6 @@
+export {default as Posts} from './Posts'
+export {default as Create} from './Create'
+export {default as Detail} from './Detail'
+export {default as Error} from './Error'
+export {default as Edit} from './Edit'
+export {default as Auth} from './Auth'
