@@ -15,7 +15,7 @@ const Detail = () => {
 export default Detail
 
 export const loader = async({request,params})=>{
-    const respone = await fetch(`http://localhost:8080/posts/${params.id}`);
+    const respone = await fetch(`${import.meta.env.VITE_APP_DOMAIN}/posts/${params.id}`);
     if(!respone.ok){
         throw json({message:'Cannot get posts.'},{status : 500})
     } else {
@@ -26,7 +26,7 @@ export const loader = async({request,params})=>{
 
 export const action = async({request,params}) =>{
     const token = getToken();
-    const response = await fetch(`http://localhost:8080/posts/${params.id}`,{
+    const response = await fetch(`${import.meta.env.VITE_APP_DOMAIN}/posts/${params.id}`,{
         method: 'DELETE',
         headers: {
             'Authorization': 'Bearer '+token,

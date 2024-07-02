@@ -65,10 +65,10 @@ export const action = async({request,params}) =>{
         description : data.get('description')
     }
     const method = request.method;
-    let url = 'http://localhost:8080/posts';
+    let url = `${import.meta.env.VITE_APP_DOMAIN}/posts`;
     if(method === 'PATCH'){
         const id = params.id;
-        url = `http://localhost:8080/posts/${id}`
+        url = `${import.meta.env.VITE_APP_DOMAIN}/posts/${id}`
     }
     const token = getToken();
     const response = await fetch(url, {

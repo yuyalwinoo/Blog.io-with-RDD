@@ -26,7 +26,7 @@ export const action = async({request,params}) =>{
         throw json({message : 'File not found!'},{status:404})
     }
 
-    const url = `http://localhost:8080/${mode}`;
+    const url = `${import.meta.env.VITE_APP_DOMAIN}/${mode}`;
     const response = await fetch(url, {
         method : 'POST',
         headers: {
